@@ -26,6 +26,34 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  Widget buildButton(String buttonText, double buttonHeight, Color buttonColor){
+    return Container(
+      height: MediaQuery.of(context).size.height * .1 * buttonHeight,
+      color: buttonColor,
+      child: ElevatedButton(
+
+        style:
+        ElevatedButton.styleFrom(
+          shape:
+          RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(0.0),
+            side: const BorderSide(
+                color: Colors.white,
+                width: 1,
+                style: BorderStyle.solid),),
+          padding: const EdgeInsets.all(16),
+        ),
+        onPressed: null,
+        child:  Text(buttonText,
+          style: TextStyle(
+              fontSize:30,
+              fontWeight: FontWeight.normal,
+              color: Colors.white
+          ),),
+
+      ),
+    );
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,32 +81,8 @@ class _HomePageState extends State<HomePage> {
                 child: Table(
                   children: [
                     TableRow(children: [
-                      Container(
-                        height: MediaQuery.of(context).size.height * .1,
-                        color: Colors.redAccent,
-                        child: ElevatedButton(
-
-                          style:
-                          ElevatedButton.styleFrom(
-                            shape:
-                            RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(0.0),
-                              side: const BorderSide(
-                                color: Colors.white,
-                                width: 1,
-                              style: BorderStyle.solid),),
-                            padding: const EdgeInsets.all(16),
-                          ),
-                          onPressed: null,
-                          child: const Text('C',
-                            style: TextStyle(
-                                fontSize:30,
-                            fontWeight: FontWeight.normal,
-                            color: Colors.white
-                              ),),
-
-                        ),
-                      ),])],
+buildButton('C', 1, Colors.redAccent),
+                    ])],
 
                 ),
               ),
