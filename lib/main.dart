@@ -113,7 +113,7 @@ class _HomePageState extends State<HomePage> {
         onPressed: () => buttonPressed(buttonText),
         child: Text(
           buttonText,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 30,
             fontWeight: FontWeight.normal,
             color: Colors.white,
@@ -128,7 +128,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title:  Text('Simple Calculator'),
+        title:  const Center(child: Text('CALCULATOR', style: TextStyle(fontSize: 25),)),
       ),
       body: Column(
         children:  <Widget>[
